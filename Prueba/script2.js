@@ -204,3 +204,138 @@ console.log(resultado);
 // 3. Crea unha función á que se lle pase unha frase con varias palabras e devolva a
 // mesma frase coa primeira letra de cada palabra en maiúsculas e o resto de letras en
 // minúsculas.
+
+// 1. Crea un obxecto chamado television coas propiedades marca, categoría
+// (televisores), unidades (4), prezo (354.99) e un método chamado importe que
+// devolva o prezo total das unidades (unidades x prezo).
+const television = {
+  marca: 'Samsung',
+  categoria: 'televisores',
+  unidades: 4,
+  prezo: 354.99,
+  importe: function () {
+    return this.unidades * this.prezo;
+  },
+};
+console.log('Importe = ' + television.importe());
+
+// 2. Imaxinar que se recolle a seguinte información relativa a un xogo dun servidor:
+// Utilizando a desestruturación de obxectos crea as seguintes variables:
+// ● team1: debe inicializarse co valor da propiedade team1 do obxecto inicial.
+// ● draw: debe inicializarse co valor da propiedade x do obxecto inicial.
+// ● team2: debe inicializarse co valor da propiedade team2 do obxecto inicial.
+
+const game = {
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const { team1, x, team2 } = game.odds;
+console.log(team1);
+console.log(x);
+console.log(team2);
+
+// 3. Dado o seguinte obxecto:
+// const game = {
+// scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"]
+// };
+// a. Recorre o array game.scored e mostra por pantalla información do xogador
+// que marcou e o número de gol marcado. Exemplo: “Gol 1: Lewandowski”.
+// b. Crea un novo obxecto chamado scorers que conteña como propiedades o
+// nome dos xogadores que marcaron e como valor o número de goles que
+// marcaron respectivamente. Neste exemplo sería algo así: {Lewandowski: 2,
+// Gnarby: 1, Hummels: 1}
+
+const game2 = {
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+};
+
+for (let i = 0; i < game2.scored.length; i++) {
+  console.log(`Gol ${i + 1}: ${game2.scored[i]} `);
+}
+
+const gameEvents = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow card'],
+  [69, 'Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow card'],
+]);
+
+for (const [minuto, info] of gameEvents) {
+  minuto <= 47
+    ? console.log(`[PRIMEIRA PARTE] ${minuto}: ${info}`)
+    : console.log(`[SEGUNDA PARTE]  ${minuto}: ${info}`);
+}
+
+// 1. Crea unha función frecha que devolva o cubo dun número pasado como parámetro.
+const cadrado = (a) => a ** 2;
+console.log(cadrado(2));
+
+// 2. Crea unha función frecha á que se lle pase un array e devolva como resultado un
+// array cos elementos impares do array de entrada.
+
+const arrayEntrada = [10, 2, 3, 5, 7, 8, 23, 50];
+const numerosImpares = (array) => {
+  const resultado = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 !== 0) {
+      resultado.push(array[i]);
+    }
+  }
+  return resultado;
+};
+console.log(numerosImpares(arrayEntrada)); // (4) [3, 5, 7, 23]
+
+// 3. Crea unha función frecha que sume todos os valores pasados como parámetros,
+// sendo estes un número indeterminado.
+
+const sumar = (...numeros) => {
+  let result = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    result += numeros[i];
+  }
+  return result;
+};
+console.log(sumar(2, 3, 4));
+
+// 4. Crea unha función á que se lle pasen varios números como parámetros (un número
+// indeterminado de parámetros) e que devolva a media deses números.
+
+const media = (...numeros) => {
+  let total = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    total += numeros[i];
+  }
+  let media = total / numeros.length;
+  return media.toFixed(2);
+};
+console.log(media(2, 3, 4, 5));
+
+// 5. Crea unha función frecha chamada minMax() que reciba como parámetro un array
+// de números e devolva un obxecto co valor mínimo e máximo do array de entrada:
+
+const minMax = (array) => {
+  const ordenado = array.sort();
+  return { min: ordenado[0], max: ordenado[array.length - 1] };
+};
+
+console.log(minMax([1, 2, 3, 4, 5])); // Debe devolver { min: 1, max: 5 }
+
+// 6. Crea unha función autoinvocada á que se lle pase a lonxitude e ancho dun
+// rectángulo. A función debe mostrar por consola unha mensaxe indicando o valor da
+// área do rectángulo.
+
+(function (longitud, ancho) {
+  let area = longitud * ancho;
+  console.log(area);
+})(2, 5);
