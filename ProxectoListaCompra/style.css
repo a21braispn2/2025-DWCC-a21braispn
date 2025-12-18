@@ -1,0 +1,141 @@
+/* ======== DISEÑO OSCURO LIMPIO ======== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ======== FONDO OSCURO ======== */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#container {
+  width: 500px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ======== ENCABEZADO ======== */
+#head {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* espacio entre la imagen y el título */
+  margin-bottom: 20px;
+}
+
+#head img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px; /* opcional, redondea esquinas */
+}
+
+#head h1 {
+  font-size: 1.8em;
+  color: #ffffff;
+}
+
+/* ======== INPUTS ======== */
+input {
+  width: 95%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* ======== BOTONES ======== */
+button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#engadir {
+  background-color: #3a86ff;
+  color: white;
+}
+
+#engadir:hover {
+  background-color: #265ecc;
+}
+
+#borrar {
+  width: 95%;
+  background-color: #ff4d4d;
+  color: white;
+  margin-top: 15px;
+}
+
+#borrar:hover {
+  background-color: #cc0000;
+}
+
+/* ======== LISTA ======== */
+ul {
+  list-style: none;
+  width: 95%;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-left: 0;
+}
+
+ul li {
+  background-color: #2a2a2a;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ul li button:hover {
+  background-color: #cc0000;
+}
+
+/* ======== SCROLLBAR ======== */
+ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
